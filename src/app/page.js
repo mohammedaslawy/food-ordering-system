@@ -17,7 +17,7 @@ export default function Home() {
         <div className="text-gray-500 max-w-4xl max-auto mt-4 flex
       flex-col gap-4">
           <p className="">
-            "Welcome to Flavors Bistro, where culinary excellence meets
+            Welcome to Flavors Bistro, where culinary excellence meets
             a warm and inviting atmosphere. At the heart of our kitchen is
             a passion for crafting delightful dishes that awaken your taste buds.
             With a dedication to using fresh, locally-sourced ingredients,

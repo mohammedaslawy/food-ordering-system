@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 import { getServerSession } from "next-auth";
-import { authOptions } from '../../../app/api/auth/[...nextauth]/route';
 import { User } from '../../../app/models/User';
 import { UserInfo } from "../../../app/models/UserInfo";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 
 
 export async function PUT(req) {

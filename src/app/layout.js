@@ -1,10 +1,10 @@
-import { Roboto } from "next/font/google";
+// import { Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "../components/layout/Header";
 import {AppProvider} from "../components/AppContext";
 import {Toaster} from "react-hot-toast";
 
-const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700"] });
+// const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata = {
   title: "Restaurant App",
@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className='scroll-smooth' style={{scrollBehavior:'smooth'}}>
-      <body className={roboto.className}>
+      <body className={""}>
         <main className="max-w-4xl mx-auto p-4">
           <AppProvider>
             <Toaster/>
