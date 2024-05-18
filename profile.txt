@@ -1,0 +1,147 @@
+// import { useSession } from "next-auth/react";
+// import { redirect } from "next/navigation";
+// import { useEffect, useState } from "react";
+// import toast from "react-hot-toast";
+// import UserTabs from '../../components/layout/UserTabs';
+// import Image from "next/image";
+// export default function ProfilePage() {
+
+//     const [image, setImage] = useState('');
+//     const session = useSession();
+//     const [userName, setUserName] = useState('');
+//     const [phone, setPhone] = useState('');
+//     const [streetAddress, setStreetAddress] = useState('');
+//     const [postalCode, setPostalCode] = useState('');
+//     const [city, setCity] = useState('');
+//     const [country, setCountry] = useState('');
+//     const [isAdmin, setIsAdmin] = useState(false);
+//     const [profileFetched, setProfileFetched] = useState(false);
+//     const { status } = session;
+
+
+//     useEffect(() => {
+//         if (status === 'authenticated') {
+//             setUserName(session.data.user.name);
+//             setImage(session.data.user.image);
+//             fetch('api/profile').then(response => {
+//                 response.json().then(data => {
+//                     // console.log(data);
+//                     setPhone(data.phone);
+//                     setPostalCode(data.postalCode);
+//                     setStreetAddress(data.streetAddress);
+//                     setCity(data.city);
+//                     setCountry(data.country);
+//                     setIsAdmin(data.admin);
+//                     setProfileFetched(true);
+//                 })
+//             })
+//         }
+//     }, [session, status]);
+
+//     async function handleProfile(ev) {
+//         ev.preventDefault();
+
+//         const savingPromose = new Promise(async (resolve, reject) => {
+//             const response = await fetch('api/profile', {
+//                 method: 'PUT',
+//                 headers: {
+//                     'Content-Type':
+//                         'application/json'
+//                 },
+//                 body: JSON.stringify({
+//                     name: userName,
+//                     image,
+//                     streetAddress,
+//                     phone,
+//                     postalCode,
+//                     city,
+//                     country,
+//                 }),
+//             });
+//             if (response.ok)
+//                 resolve();
+//             else
+//                 reject(await response.text())
+//         });
+//         await toast.promise(savingPromose, {
+//             loading: 'Saving ...',
+//             success: 'Profile Saved Successfully!',
+//             error: "Error Saving Profile"
+//         });
+//     }
+
+//     async function handleFileChange(ev) {
+//         const files = ev.target.files;
+
+//         if (files?.length === 1) {
+//             const data = new FormData;
+//             data.set('file', files[0]);
+
+//             setIsUploading(true);
+//             const response = await fetch('api/upload', {
+//                 method: 'POST',
+//                 body: data,
+//             });
+//             const link = await response.json();
+//             setImage(link);
+//             setIsUploading(false);
+//         }
+//     }
+//     if (status === 'loading' || !profileFetched) {
+//         return 'loading...';
+//     }
+//     if (status === 'unauthenticated') {
+//         return redirect('/login');
+//     }
+
+//     return (
+
+//         <section className="mt-8">
+
+//             <UserTabs isAdmin={isAdmin}/>
+//             <div className="max-w-xs mx-auto mt-8">
+//                 <div className="flex gap-4">
+//                     <div>
+//                         <div className="p-2 rounded-lg max-w-[120px] relative">
+//                             {image && (
+//                                 <Image className="rounded-lg w-full h-full mb-1" src={image}
+//                                     width={250} height={250} alt={"avatar"} />
+//                             )}
+//                             <label>
+//                                 <input type="file" className="hidden" onChange={handleFileChange} />
+//                                 <span className="block border border-gray-300 rounded-lg p-2
+//                             text-center cursor-pointer">Edit</span>
+//                             </label>
+//                         </div>
+//                     </div>
+//                     <form className="grow" onSubmit={handleProfile}>
+//                         <input type="text" placeholder="First and Last name"
+//                             value={userName} onChange={ev => setUserName(ev.target.value)} />
+//                         <input type="email" disabled={true} value={session.data?.user?.email} />
+//                         <input type="tel" placeholder="Phone Number"
+//                             value={phone} onChange={ev => setPhone(ev.target.value)} />
+//                         <input type="text" placeholder="Street Address"
+//                             value={streetAddress} onChange={ev => setStreetAddress(ev.target.value)} />
+//                         <div className="flex gap-2">
+//                             <input
+//                                 type="text" placeholder="City"
+//                                 value={city} onChange={ev => setCity(ev.target.value)} />
+//                             <input
+//                                 type="text" placeholder="postal Code"
+//                                 value={postalCode} onChange={ev => setPostalCode(ev.target.value)} />
+//                         </div>
+//                         <input
+
+//                             type="text" placeholder="Country"
+//                             value={country} onChange={ev => setCountry(ev.target.value)} />
+//                         <button type="submit">Save</button>
+//                     </form>
+//                 </div>
+//             </div>
+//         </section>
+//     );
+// }
+
+Micro — Asynchronous HTTP microservices
+react hoast toast
+react flying button
