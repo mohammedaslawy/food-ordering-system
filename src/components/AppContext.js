@@ -48,6 +48,11 @@ export function AppProvider({children}){
     });
     toast.success('Product removed');
    }
+   function saveCartProductsToLocalStorage(cartProducts) {
+    if (ls) {
+      ls.setItem('cart', JSON.stringify(cartProducts));
+    }
+  }
     function addTocart(product,size=null, extras=[]){
         setCartProducts(prevProducts => {
             const cartProduct = {...product, size, extras};

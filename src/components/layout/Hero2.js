@@ -1,7 +1,5 @@
 
 export default function Hero2() {
-    
-    
     return (
 <section class="mb-4 mt-4">
   

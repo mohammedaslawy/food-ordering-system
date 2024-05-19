@@ -6,6 +6,7 @@ import { CartContext } from "../AppContext";
 import ShoppingCart from "@/components/icons/Cart";
 import Bar2 from "@/components/icons/Bar2";
 
+
 function AuthLinks({ status, userName }) {
   if (status === 'authenticated') {
     return (
