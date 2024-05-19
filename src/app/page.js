@@ -1,5 +1,5 @@
 "use client"
-import Hero from "../components/layout/Hero";
+import Hero2 from "../components/layout/Hero2";
 import Contact from "@/components/layout/Contact"
 import HomeMenu from "../components/layout/HomeMenu";
 import SectionHeaders from "../components/layout/SectionHeaders";
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
 
-      <Hero />
+      <Hero2 />
       <HomeMenu />
       <section className="text-center my-18 mt-12" id="about">
         <SectionHeaders 
