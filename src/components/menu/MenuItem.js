@@ -9,7 +9,7 @@ export default function MenuItem(menuItem) {
 
     const {
         image, name, description, basePrice,
-        sizes, extra, } = menuItem;
+        sizes, extra,_id } = menuItem;
     const [showPopUp, setShowPopUp] = useState(false);
     const [selectedSize, setSelectedSize] = useState(sizes?.[0] || null);
     const [selectExtras, setSelectExtras] = useState([]);
